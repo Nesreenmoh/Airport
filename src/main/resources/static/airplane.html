@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Airplane</title>
+    <!-- imports JQuery  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- import dataTable link  -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" />
+    
+   
+    
+
+    <link rel="stylesheet" href="airplane.css">
+    <script src="airplane.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <form>
+          <div class="input-group mb-3">
+           <label for=""><h5>Airport Name </h5> </label><br>
+            <select id="airportName" class="custom-select" placeholder="Airport Name">
+              <h3>Airport Name</h3>
+              <option></option>
+            </select>
+            </div>
+            <br>
+        <div class="input-group mb-3">
+          <input
+            class="col-sm-10"
+            type="text"
+            id="name"
+            placeholder="Airplane Name"
+          />
+        <div class="input-group mb-3">
+            <input class="col-sm-10" type="number" id="fuel" placeholder="Airplane fuel" />
+        </div>
+
+        <div class="form-group">
+            <button type="button" id="add" class="btn btn-primary"> Add Airplane</button>
+        </div>
+      </form>
+    </div>
+     <br>
+      <div>
+    <table id="airplaneContainer" class="table table-bordered table-striped table-hover">
+      <thead>
+        <tr class="table-primary">
+            <td>ID</td>
+            <td>Name</td>
+             <td>Airport</td>
+            <td>Fuel</td>
+            <td>Delete</td>
+            <td>Move</td>
+        </tr>
+      </thead>
+    </table>
+    
+
+    </div>
+  </body>
+</html>
