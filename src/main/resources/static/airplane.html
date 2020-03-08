@@ -27,12 +27,86 @@
     <script src="airplane.js"></script>
   </head>
   <body>
+     <!-- Delete Alert Modal section -->
+    <div id="confirm" class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Warning</h5>
+            <button type="button" class="closeBtn" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Are you sure you want to delete?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="yesBtn" class="btn btn-primary">Yes</button>
+            <button type="button" id="closeConfirm" class="btn btn-secondary" data-dismiss="modal">No</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- define an update modal -->
+    <div id="moveModal" class="modal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="title">Move plane to another airport</h5>
+            <button type="button" class="closeMove" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="moveAirportlabel">Airport </label>
+                <select class="form-control" id="airportEditName">
+                  <option></option>
+                </select>
+              </div>
+               <div class="form-group">
+                <label for="AirplaneEditlable"> Name </label>
+                <input type="text" class="form-control" id="editAirpanetName" placeholder="Airplane Name" required />
+              </div>
+               <div class="form-group">
+                <label for="Airplanefuellable">  Fuel </label>
+                <input type="text" class="form-control" id="editAirpanetfuel" placeholder="Airplane Fuel" required />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="move" class="btn btn-primary">Move</button>
+            <button type="button" id="dismissbtn" class="btn btn-secondary">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+      <!-- Error/Success Modal Messages -->
+    <div id="error" class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Warning</h5>
+            <button type="button" id="closeError" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p id="message"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="closeOK" class="btn btn-secondary" data-dismiss="modal">OK</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="container">
       <form>
-          <div class="input-group mb-3">
-           <label for=""><h5>Airport Name </h5> </label><br>
+          <div class="form-group">
+           <label for="">Airport Name </label><br>
             <select id="airportName" class="custom-select" placeholder="Airport Name">
-              <h3>Airport Name</h3>
               <option></option>
             </select>
             </div>
@@ -54,16 +128,17 @@
       </form>
     </div>
      <br>
-      <div>
+      <div class="table-div">
     <table id="airplaneContainer" class="table table-bordered table-striped table-hover">
       <thead>
         <tr class="table-primary">
             <td>ID</td>
             <td>Name</td>
-             <td>Airport</td>
-            <td>Fuel</td>
+             <td>Fuel</td>
+            <td>Airport</td>
             <td>Delete</td>
             <td>Move</td>
+            <td>Refill</td>
         </tr>
       </thead>
     </table>

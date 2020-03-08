@@ -31,21 +31,15 @@ public class AirplaneController {
 
     // check if the fuel is enough
 
-    @GetMapping("/move")
-    public Boolean checkFuel(@RequestBody Airplane airplane,@RequestBody Airport airport) {
-        if(airplane.getFuel()< 2) {
-            return false;
-        }
-            else{
-                airplane.setFuel(airplane.getFuel()-2);
-                airplane.setAirport(airport);
+    @PutMapping("/{id}/move")
+    public void checkFuel(@RequestBody Airplane airplane) {
+               airplane.setFuel((airplane.getFuel())-2);
                 airplaneRepository.save(airplane);
-                return true;
-        }
+
     }
 
     // to refull an airplane when we click on refill
-    @PutMapping("/refull")
+    @PutMapping("/{id}/refill")
     public void updateFuel(@RequestBody Airplane airplane){
         airplane.setFuel(5);
         airplaneRepository.save(airplane);
